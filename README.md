@@ -1,5 +1,5 @@
 # SimpleScheduler
-Simple scheduler with fluent interface to use when System.Timers are not enough and Quartz.Net is a bit more complex that what you need.
+Simple scheduler with fluent interface to use when System.Timers are not enough and Quartz.Net is a bit more complex than what you need.
 
 ### Quick Start
 
