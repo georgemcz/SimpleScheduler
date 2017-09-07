@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A84CA7BF-0866-4A1B-90F7-07656B59D9AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleScheduler</RootNamespace>
+    <AssemblyName>SimpleScheduler</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Packages\LibLog.4.2\LibLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scheduling\ConfigurationLanguage\IHideObjectMembers.cs" />
+    <Compile Include="Scheduling\ConfigurationLanguage\IRecurrentWorkItemConfiguration.cs" />
+    <Compile Include="Scheduling\ConfigurationLanguage\IWorkItemConfiguration.cs" />
+    <Compile Include="Scheduling\ConfigurationLanguage\IWorkItemRepeatConfiguration.cs" />
+    <Compile Include="Scheduling\ConfigurationLanguage\IWorkItemStartConfiguration.cs" />
+    <Compile Include="Scheduling\ConfigurationLanguage\TimeSpanExtensions.cs" />
+    <Compile Include="Scheduling\ConfigurationLanguage\WorkingItemConfigurator.cs" />
+    <Compile Include="Scheduling\DefaultScheduler.cs" />
+    <Compile Include="Scheduling\Internals\AsynchronousWorkingItemExecutor.cs" />
+    <Compile Include="Scheduling\Internals\DelayedCallback.cs" />
+    <Compile Include="Scheduling\Internals\IDelayedCallback.cs" />
+    <Compile Include="Scheduling\Internals\ISchedulingTimerGranularity.cs" />
+    <Compile Include="Scheduling\Internals\IWorkingItem.cs" />
+    <Compile Include="Scheduling\Internals\IWorkingItemExecutor.cs" />
+    <Compile Include="Scheduling\Internals\IWorkingItemQueueProcessor.cs" />
+    <Compile Include="Scheduling\Internals\LocalTimeRecurringWorkingItem.cs" />
+    <Compile Include="Scheduling\Internals\RecurringWorkingItem.cs" />
+    <Compile Include="Scheduling\Internals\SchedulingTimerGranularity.cs" />
+    <Compile Include="TimeZones\ITimeSource.cs" />
+    <Compile Include="TimeZones\StandardTime.cs" />
+    <Compile Include="TimeZones\Time.cs" />
+    <Compile Include="Scheduling\Internals\WorkingItem.cs" />
+    <Compile Include="Scheduling\Internals\WorkingItemQueueProcessor.cs" />
+    <Compile Include="Scheduling\ISchedulerEngine.cs" />
+    <Compile Include="Scheduling\Schedule.cs" />
+    <Compile Include="Scheduling\SchedulerEngine.cs" />
+    <Compile Include="Scheduling\SchedulingHelperExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
