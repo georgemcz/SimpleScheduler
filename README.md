@@ -3,7 +3,7 @@ Simple scheduler with fluent interface to use when System.Timers are not enough 
 
 ### Quick Start
 
-Simply add the package '' to your project
+Simply add the package 'Simple.Scheduler' to your project
 
 ```
 Install-Package Simple.Scheduler
@@ -15,11 +15,11 @@ and you are ready to go. To schedule something, start with Schedule class:
 using Simple.Scheduler;
 
 
-var task = Schedule.Action(() => Console.WriteLine("ping"))
-                   .After(5.sec())
-                   .ThenEvery(1.min())
-                   .For(2.hours())
-                   .Start();
+IWorkingItem task = Schedule.Action(() => Console.WriteLine("ping"))
+                            .After(5.sec())
+                            .ThenEvery(1.min())
+                            .For(2.hours())
+                            .Start();
 
 ```
 
